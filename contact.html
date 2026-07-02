@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact | Chantal Leduc</title>
+<meta name="description" content="Get in touch with Chantal Leduc, Montreal-based fashion stylist and design consultant, for styling and collaboration inquiries."/>
+<link rel="canonical" href="https://chantalleduc.netlify.app/contact.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/style.css"/>
+
+</head>
+<body>
+
+<!-- ══ NAV ═══════════════════════════════════════════════════════ -->
+<nav id="main-nav">
+  <a class="nav-logo" href="/">Chantal<span> Leduc</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a class="active" href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══ PAGE HERO ═════════════════════════════════════════════════ -->
+<div class="cp-hero pg-hero">
+  <p class="eyebrow" style="color:rgba(255,255,255,.55)">Get in Touch</p>
+  <h1>Contact Chantal</h1>
+  <p class="pg-sub">Reach out to discuss styling, design collaborations, or press inquiries.</p>
+</div>
+
+<!-- ══ CONTACT CARD ══════════════════════════════════════════════ -->
+<div class="cc-wrap">
+  <div class="cc">
+    <div class="fp">
+      <h2>Send a message</h2>
+      <p class="fp-sub">Chantal typically responds within a few business days.</p>
+      <form class="cf2" onsubmit="return false">
+        <div><label>Full name</label><input type="text" placeholder="Your name"/></div>
+        <div><label>Email</label><input type="email" placeholder="email@example.com"/></div>
+        <div><label>Message</label><textarea placeholder="Your message..."></textarea></div>
+        <button class="btn-cf2" type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="ci">
+      <div class="ci-title">Let's connect.</div>
+
+    
+      <div>
+        <div class="ci-lbl">Location</div>
+        <div class="ci-val">Montreal, Canada</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SOCIAL ═══════════════════════════════════════════════════ -->
+<div class="acc-section" style="background:var(--off)">
+  <div class="acc-wrap">
+    <div class="sb-box" style="text-align:center">
+      <div class="sb-title" style="border:none;margin-bottom:.8rem">Follow Chantal Leduc</div>
+      <div class="social-media-list">
+        <a href="https://www.facebook.com/ChantalLeduc" target="_blank" rel="noopener noreferrer" class="asoc">Facebook</a>
+        <a href="https://www.instagram.com/chantal_leduc_" target="_blank" rel="noopener noreferrer" class="asoc">Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Chantal Leduc. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+function tog(btn,id){
+  const c=document.getElementById(id),open=c.classList.contains('open');
+  document.querySelectorAll('.acc-body').forEach(e=>e.classList.remove('open'));
+  document.querySelectorAll('.acc-btn').forEach(e=>e.classList.remove('open'));
+  if(!open){c.classList.add('open');btn.classList.add('open');}
+}
+</script>
+</body>
+</html>
