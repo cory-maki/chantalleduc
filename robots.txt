@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
 Disallow: /privacy.html
 
 Sitemap: https://chantalleduc.netlify.app/sitemap.xml
