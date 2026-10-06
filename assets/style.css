@@ -186,3 +186,12 @@ a.ci-val:hover{color:#fff}
   .art-body{grid-template-columns:1fr}.art-sidebar-box{position:static}
   .art-hero{padding:40px 1.2rem 60px}.art-hero-title{font-size:1.7rem}
 }
+
+/* ARTICLE FIGURE + RELATED READING */
+.art-figure{margin:1.5rem 0}
+.art-figure img{width:100%;max-height:520px;object-fit:cover;object-position:center 30%;border-radius:8px;display:block}
+.art-figure figcaption{font-size:.78rem;color:var(--tl);margin-top:.5rem;font-style:italic}
+.art-related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.rel-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.rel-cards .card-article .ct-img{height:200px}
+@media(max-width:560px){.rel-cards{grid-template-columns:1fr}}
