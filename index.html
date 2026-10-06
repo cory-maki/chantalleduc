@@ -3,30 +3,103 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Chantal Leduc | Fashion Stylist &amp; Design Consultant</title>
-<meta name="description" content="Chantal Leduc is a French-Canadian fashion stylist, designer, and former international model based in Montreal, known for her presence at Paris and Milan Fashion Week."/>
+<title>Chantal Leduc | Fashion Stylist &amp; Designer | Montreal</title>
+<meta name="description" content="Chantal Leduc is a Montreal-born fashion stylist, designer, and former international model, and a regular at Milan and Paris Fashion Week."/>
 <link rel="canonical" href="https://chantalleduc.netlify.app/"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/style.css"/>
-
+<!-- Open Graph -->
+<meta property="og:type" content="profile"/>
+<meta property="og:site_name" content="Chantal Leduc"/>
+<meta property="og:title" content="Chantal Leduc | Fashion Stylist &amp; Designer | Montreal"/>
+<meta property="og:description" content="Chantal Leduc is a Montreal-born fashion stylist, designer, and former international model, and a regular at Milan and Paris Fashion Week."/>
+<meta property="og:image" content="https://chantalleduc.netlify.app/images/hero.jpg"/>
+<meta property="og:url" content="https://chantalleduc.netlify.app/"/>
+<meta name="twitter:card" content="summary_large_image"/>
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Chantal Leduc",
-  "url": "https://chantalleduc.netlify.app/",
-  "jobTitle": "Fashion Stylist & Design Consultant",
-  "description": "French-Canadian fashion stylist, designer, and former international model based in Montreal, Canada.",
-  "homeLocation": {
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://chantalleduc.netlify.app/#person",
+   "name": "Chantal Leduc",
+   "givenName": "Chantal",
+   "familyName": "Leduc",
+   "jobTitle": "Fashion Stylist and Designer",
+   "url": "https://chantalleduc.netlify.app/",
+   "image": "https://chantalleduc.netlify.app/images/hero.jpg",
+   "description": "Chantal Leduc is a French-Canadian fashion stylist, designer, and former international model from Montreal, and a regular presence at Women’s Fashion Week in Milan and Paris.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Montreal",
+    "addressRegion": "QC",
+    "addressCountry": "CA"
+   },
+   "birthPlace": {
     "@type": "Place",
-    "name": "Montreal, Canada"
+    "name": "Montreal, Quebec, Canada"
+   },
+   "nationality": {
+    "@type": "Country",
+    "name": "Canada"
+   },
+   "award": "Star Search International, Spokesmodel (1993)",
+   "knowsAbout": [
+    "Fashion styling",
+    "Fashion design",
+    "Couture",
+    "Fashion Week",
+    "Modeling",
+    "Travel",
+    "Architecture"
+   ]
   },
-  "sameAs": [
-    "https://www.facebook.com/ChantalLeduc",
-    "https://www.instagram.com/chantal_leduc_"
-  ]
+  {
+   "@type": "WebSite",
+   "@id": "https://chantalleduc.netlify.app/#website",
+   "url": "https://chantalleduc.netlify.app/",
+   "name": "Chantal Leduc",
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://chantalleduc.netlify.app/#person"
+   },
+   "about": {
+    "@id": "https://chantalleduc.netlify.app/#person"
+   }
+  }
+ ]
 }
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/style.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  const _sb=supabase.createClient('https://aowblircaymwuymcmllh.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvd2JsaXJjYXltd3V5bWNtbGxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzMzExMjcsImV4cCI6MjA2NzkwNzEyN30.qS7jxVwu83zEYMvxNo7C_2dtVrSZ6wYIFiNtoN69UkQ');
+  const _cid='Chantal Leduc';
+  async function loadSBLinks(){
+    const[{data:soc},{data:news}]=await Promise.all([
+      _sb.from('social_media').select('*').eq('client_id',_cid),
+      _sb.from('news_links').select('*').eq('client_id',_cid)
+    ]);
+    const render=(ids,data)=>ids.forEach(id=>{
+      const el=document.getElementById(id);
+      if(!el||!data)return;
+      el.innerHTML='';
+      data.forEach(l=>{
+        const a=document.createElement('a');
+        a.href=l.url;a.target='_blank';a.rel='noopener noreferrer';a.title=l.name;
+        a.innerHTML='<img src="'+l.icon+'" alt="'+l.name+'" style="width:30px;height:30px;border-radius:4px"/>';
+        el.appendChild(a);
+      });
+    });
+    render(['sml-soc-home'],soc);
+    render(['sml-news-home'],news);
+  }
+  document.addEventListener('DOMContentLoaded',loadSBLinks);
+})();
 </script>
 </head>
 <body>
@@ -44,11 +117,11 @@
 <!-- ══ HERO ═══════════════════════════════════════════════════════ -->
 <div class="h-hero">
   <div class="h-inner">
-    <div class="h-photo"><img src="images/hero.jpg" alt="Chantal Leduc"/></div>
+    <div class="h-photo"><img src="images/hero.jpg" alt="Black-and-white portrait of Chantal Leduc smiling as a makeup artist applies powder"/></div>
     <div>
       <h1 class="h-name">Chantal Leduc</h1>
-      <p class="h-role">Fashion Stylist &amp; Design Consultant</p>
-      <p class="h-desc">A French-Canadian fashion stylist and former international model, Chantal brings decades of runway experience and a refined eye to style, design, and the art of living well.</p>
+      <p class="h-role">Fashion Stylist &amp; Designer</p>
+      <p class="h-desc">Chantal Leduc is a French-Canadian fashion stylist, designer, and former international model from Montreal. From the front rows of Milan and Paris Fashion Week to the grand hotels and historic streets of Europe, she brings a refined, deeply personal eye to style, design, and the art of living well.</p>
       <div class="h-loc">Montreal, Canada</div>
     </div>
   </div>
@@ -59,57 +132,54 @@
   <div class="ha-inner">
     <div class="ha-text">
       <p class="eyebrow">About Chantal</p>
-      <h2 class="sec-title">A Life Shaped by Style, Culture &amp; Timeless Elegance</h2>
-      <p>Chantal Leduc is a French-Canadian fashion stylist, designer, and former international model whose life and career have been shaped by a deep appreciation for beauty, culture, and timeless elegance. Born and raised in Montreal, Canada, she began her journey in fashion at a young age, embarking on an international modeling career that took her across continents.</p>
-      <p>Now focused on fashion styling and design, Chantal combines her international experience with an innate sense of refinement and individuality. A regular presence at Women's Fashion Week in Milan and Paris, she draws inspiration from the world's most celebrated fashion houses and evolving artistic movements.</p>
-      <p>Beyond couture, Chantal's passions extend to travel and architecture — she is captivated by beautifully designed spaces, historic residences, and grand European hotels. Above all, she considers her four accomplished adult children her greatest pride.</p>
-      <a class="ha-link" href="about.html">Learn more →</a>
+      <h2 class="sec-title">A life shaped by beauty and elegance</h2>
+      <p>Born and raised in Montreal, Chantal Leduc stepped into fashion at a young age and built an international modeling career that carried her across continents. Those years introduced her to some of the industry&#8217;s most inspiring creative minds and shaped the eye that now defines <a href="about.html">her work as a fashion stylist</a> and designer.</p>
+      <p>Today, Chantal&#8217;s aesthetic balances classic sophistication with contemporary luxury. A regular presence at Women&#8217;s Fashion Week in Milan and Paris, she follows celebrated houses and emerging designers alike, gathering <a href="couture-lessons-front-row.html">lessons from the couture front row</a> and translating them into style that feels effortless and personal.</p>
+      <p>Beyond the runway, Leduc is drawn to travel, architecture, and beautifully designed spaces. Above all, she is the proud mother of four accomplished adult children, her greatest source of joy.</p>
+      <a class="ha-link" href="about.html">More about Chantal →</a>
     </div>
-    <div><img class="ha-photo" src="images/hero-secondary.jpg" alt="Chantal Leduc"/></div>
+    <div><img class="ha-photo" src="images/hero-secondary.jpg" alt="Chantal Leduc in a sheer black embellished dress on a street in Milan during Fashion Week"/></div>
   </div>
 </div>
 
-<!-- ══ SOCIAL ═══════════════════════════════════════════════════ -->
+<!-- ══ SOCIAL + PRESS ACCORDION ═══════════════════════════════════ -->
 <div class="acc-section" style="background:var(--off)">
   <div class="acc-wrap">
-    <div class="sb-box" style="text-align:center">
-      <div class="sb-title" style="border:none;margin-bottom:.8rem">Follow Chantal Leduc</div>
-      <div class="social-media-list">
-        <a href="https://www.facebook.com/ChantalLeduc" target="_blank" rel="noopener noreferrer" class="asoc">Facebook</a>
-        <a href="https://www.instagram.com/chantal_leduc_" target="_blank" rel="noopener noreferrer" class="asoc">Instagram</a>
-      </div>
-    </div>
+    <button class="acc-btn" onclick="tog(this,'s-home')">Follow Chantal on Social Media <span class="chevron">&#8964;</span></button>
+    <div class="acc-body" id="s-home"><div id="sml-soc-home" class="social-media-list"></div></div>
+    <button class="acc-btn" onclick="tog(this,'n-home')">Chantal in the Press <span class="chevron">&#8964;</span></button>
+    <div class="acc-body" id="n-home"><div id="sml-news-home" class="social-media-list"></div></div>
   </div>
 </div>
 
 <!-- ══ LATEST ARTICLES ════════════════════════════════════════════ -->
 <div class="h-press">
   <div class="pi">
-    <p class="eyebrow">Journal</p>
-    <h2 class="sec-title">Latest From Chantal</h2>
+    <p class="eyebrow">The Journal</p>
+    <h2 class="sec-title">Notes on Style, Couture &amp; Travel</h2>
     <div class="cards">
-      <a class="card card-article" href="inside-fashion-week-paris-milan.html">
-        <div class="ct-img"><img src="images/article-1.jpg" alt="Inside Fashion Week: Paris, Milan, and the Art of Inspiration"/></div>
+      <a class="card card-article" href="couture-lessons-front-row.html">
+        <div class="ct-img"><img src="images/article-1.jpg" alt="Couture Lessons from the Front Row in Milan and Paris"/></div>
         <div class="cb">
           <div class="cb-pub">Fashion Week</div>
-          <div class="cb-hl">Inside Fashion Week: Paris, Milan, and the Art of Inspiration</div>
-          <div class="cb-yr">June 15, 2026</div>
+          <div class="cb-hl">Couture Lessons from the Front Row in Milan and Paris</div>
+          <div class="cb-yr">September 14, 2026</div>
         </div>
       </a>
-      <a class="card card-article" href="building-wardrobe-lasts-lifetime.html">
-        <div class="ct-img"><img src="images/article-2.jpg" alt="Building a Wardrobe That Lasts a Lifetime"/></div>
+      <a class="card card-article" href="art-effortless-elegance.html">
+        <div class="ct-img"><img src="images/article-2.jpg" alt="The Art of Effortless Elegance: Why Style Is Always Personal"/></div>
         <div class="cb">
-          <div class="cb-pub">Style Guide</div>
-          <div class="cb-hl">Building a Wardrobe That Lasts a Lifetime</div>
-          <div class="cb-yr">May 10, 2026</div>
+          <div class="cb-pub">Styling</div>
+          <div class="cb-hl">The Art of Effortless Elegance: Why Style Is Always Personal</div>
+          <div class="cb-yr">August 20, 2026</div>
         </div>
       </a>
-      <a class="card card-article" href="how-architecture-shapes-sense-style.html">
-        <div class="ct-img"><img src="images/article-3.jpg" alt="How Architecture Shapes My Sense of Style"/></div>
+      <a class="card card-article" href="grand-hotels-quiet-lakes.html">
+        <div class="ct-img"><img src="images/article-3.jpg" alt="Grand Hotels and Quiet Lakes: How Travel Shapes a Designer&#8217;s Eye"/></div>
         <div class="cb">
-          <div class="cb-pub">Travel &amp; Design</div>
-          <div class="cb-hl">How Architecture Shapes My Sense of Style</div>
-          <div class="cb-yr">April 8, 2026</div>
+          <div class="cb-pub">Travel</div>
+          <div class="cb-hl">Grand Hotels and Quiet Lakes: How Travel Shapes a Designer&#8217;s Eye</div>
+          <div class="cb-yr">July 23, 2026</div>
         </div>
       </a>
     </div>
@@ -131,7 +201,7 @@
     </div>
     <div class="hcp">
       <h3 class="hc-title">Let's connect.</h3>
-      <p>Whether you're looking to refine your personal style or explore a design collaboration, Chantal Leduc would love to hear from you.</p>
+      <p>For styling consultations, design collaborations, or media inquiries, Chantal welcomes thoughtful notes. Share a few details and you&#8217;ll hear back soon.</p>
      
     </div>
   </div>
